@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ModifyProductForm">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="500.0" prefWidth="800.0">
+         <children>
+            <Label layoutX="49.0" layoutY="33.0" text="Modify Product">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="64.0" layoutY="250.0" text="Inv" />
+            <Label layoutX="64.0" layoutY="207.0" text="Name" />
+            <Label layoutX="64.0" layoutY="164.0" text="ID" />
+            <Label layoutX="64.0" layoutY="295.0" text="Price" />
+            <Label layoutX="64.0" layoutY="339.0" prefHeight="0.0" prefWidth="30.0" text="Max" />
+            <TextField fx:id="modifyProductIdField" editable="false" layoutX="110.0" layoutY="159.0" />
+            <TextField fx:id="modifyProductNameField" layoutX="110.0" layoutY="202.0" />
+            <TextField fx:id="modifyProductInvField" layoutX="110.0" layoutY="246.0" prefHeight="26.0" prefWidth="80.0" />
+            <TextField fx:id="modifyProductPriceField" layoutX="110.0" layoutY="290.0" prefHeight="26.0" prefWidth="80.0" />
+            <TextField fx:id="modifyProductMaxField" layoutX="110.0" layoutY="334.0" prefHeight="26.0" prefWidth="80.0" />
+            <TextField fx:id="partSearchField" layoutX="594.0" layoutY="20.0" onAction="#onPartSearchField" promptText="Search by Part ID or Name" />
+            <TableView fx:id="modifyProductAvailableParts" layoutX="389.0" layoutY="70.0" prefHeight="132.0" prefWidth="368.0">
+               <columns>
+                  <TableColumn fx:id="availablePartIDCol" prefWidth="92.0" text="Part ID" />
+                  <TableColumn fx:id="availablePartNameCol" prefWidth="92.0" text="Part Name" />
+                  <TableColumn fx:id="availablePartInvCol" prefWidth="92.0" text="Inventory Level" />
+                  <TableColumn fx:id="availablePartPriceCol" prefWidth="92.0" text="Price Per Unit" />
+               </columns>
+            </TableView>
+            <Button fx:id="addPartToProductButton" layoutX="674.0" layoutY="215.0" mnemonicParsing="false" onAction="#onAddPartToProductButton" text="Add" />
+            <TableView fx:id="modifyProductAssociatedParts" layoutX="389.0" layoutY="259.0" prefHeight="132.0" prefWidth="368.0">
+               <columns>
+                  <TableColumn fx:id="associatedPartIDCol" prefWidth="92.0" text="Part ID" />
+                  <TableColumn fx:id="associatedPartNameCol" prefWidth="92.0" text="Part Name" />
+                  <TableColumn fx:id="associatedPartInvCol" prefWidth="92.0" text="Inventory Level" />
+                  <TableColumn fx:id="associatedPartPriceCol" prefWidth="92.0" text="Price Per Unit" />
+               </columns>
+            </TableView>
+            <Button fx:id="removeAssociatedPartButton" layoutX="578.0" layoutY="408.0" mnemonicParsing="false" onAction="#onRemoveAssociatedPartButton" text="Remove Associated Part" />
+            <Button fx:id="saveModifiedProductButton" layoutX="578.0" layoutY="451.0" mnemonicParsing="false" onAction="#onSaveModifiedProductButton" text="Save" />
+            <Button fx:id="cancelModifiedProductButton" layoutX="674.0" layoutY="451.0" mnemonicParsing="false" onAction="#onCancelModifiedProductButton" text="Cancel" />
+            <Label layoutX="208.0" layoutY="339.0" text="Min" />
+            <TextField fx:id="modifyProductMinField" layoutX="251.0" layoutY="335.0" prefHeight="26.0" prefWidth="80.0" />
+            <Label layoutX="389.0" layoutY="46.0" text="Available Parts" />
+            <Label layoutX="389.0" layoutY="233.0" text="Product's Associated Parts" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
